@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>*Gikatib*</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { background-color: #1e293b; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); text-align: center; max-width: 500px; width: 100%; }
+        h1 { font-size: 2.2rem; margin-bottom: 5px; color: #38bdf8; font-weight: bold; }
+        p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 25px; }
+        .custom-file-upload { border: 2px dashed #38bdf8; display: block; padding: 30px 20px; cursor: pointer; border-radius: 12px; transition: all 0.3s; background-color: #1e293b; margin-bottom: 20px; }
+        .custom-file-upload:hover { background-color: #0c4a6e; border-color: #7dd3fc; }
+        input[type="file"] { display: none; }
+        .info-box { background: #334155; padding: 10px; border-radius: 8px; margin-bottom: 20px; display: none; text-align: right; }
+        .info-box span { color: #34d399; font-weight: bold; }
+        label { display: block; margin-bottom: 8px; color: #cbd5e1; text-align: right; }
+        select { width: 100%; padding: 12px; border-radius: 8px; background-color: #0f172a; color: white; border: 1px solid #475569; font-size: 1rem; margin-bottom: 15px; outline: none; }
+        .repair-container { display: flex; align-items: center; background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #334155; cursor: pointer; }
+        .repair-container input { width: 20px; height: 20px; margin-left: 10px; cursor: pointer; }
+        .repair-container label { margin: 0; cursor: pointer; font-size: 0.9rem; color: #e2e8f0; }
+        button { background-color: #38bdf8; color: #0f172a; border: none; padding: 14px 24px; font-size: 1.1rem; font-weight: bold; border-radius: 30px; cursor: pointer; width: 100%; display: none; transition: background 0.2s; }
+        button:hover { background-color: #7dd3fc; }
+        button:disabled { background-color: #475569; color: #94a3b8; cursor: not-allowed; }
+        #status { margin-top: 20px; font-size: 0.95rem; color: #fbbf24; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>*Gikatib*</h1>
+    <p>Gikatib هو تطبيق ويب لتحويل صيغ ملفات 3D مجاناً بالكامل</p>
+    <label for="file-upload" class="custom-file-upload" id="upload-label">اضغط هنا لاختيار ملف الـ 3D المطلوب</label>
+    <input id="file-upload" type="file" accept=".obj,.stl,.gltf,.glb,.ply,.fbx" />
+    <div id="info-box" class="info-box">صيغة الملف: <span id="detected-format"></span><br>اسم الملف: <span id="file-name-display"></span></div>
+    <div id="options-area" style="display: none;">
+        <label for="output-format">اختر الصيغة التي تريد التحويل إليها:</label>
+        <select id="output-format">
+            <option value="glb">GLB</option>
+            <option value="gltf">GLTF</option>
+            <option value="obj">OBJ</option>
+            <option value="stl">STL</option>
+            <option value="ply">PLY</option>
+        </select>
+        <div class="repair-container">
+            <input type="checkbox" id="repair-toggle" checked />
+            <label for="repair-toggle">تفعيل المعالجة وإصلاح الأخطاء الهندسية (قد يستغرق وقتاً أطول للملفات الضخمة)</label>
+        </div>
+        <button id="convert-btn">اضغط هنا للبدء</button>
+    </div>
+    <div id="status"></div>
+</div>
+<script>
+    // 🔒 تم تشفير الرابط والعمليات البرمجية الحساسة لحماية ملكيتك الفكرية ومنع سرقة السيرفر
+    (function(_0x1a2b,_0x3c4d){const _0x5e6f=function(_0x7a8b){while(--_0x7a8b){_0x1a2b['push'](_0x1a2b['shift']());}};_0x5e6f(++_0x3c4d);}(['\x63\x6f\x6e\x76\x65\x72\x74','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6d\x31\x77\x32\x6e\x2d\x6d\x69\x67\x61\x74\x79\x70\x2e\x68\x66\x2e\x73\x70\x61\x63\x65\x2f\x63\x6f\x6e\x76\x65\x72\x74','\x61\x70\x70\x65\x6e\x64','\x66\x69\x6c\x65','\x6f\x75\x74\x70\x75\x74\x5f\x66\x6f\x72\x6d\x61\x74','\x72\x65\x70\x61\x69\x72','\x50\x4f\x53\x54','\x62\x6c\x6f\x62'],0x1ff));const _0x0123=function(_0x4567,_0x89ab){const _0x1a2b=['\x63\x6f\x6e\x76\x65\x72\x74','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6d\x31\x77\x32\x6e\x2d\x6d\x69\x67\x61\x74\x79\x70\x2e\x68\x66\x2e\x73\x70\x61\x63\x65\x2f\x63\x6f\x6e\x76\x65\x72\x74','\x61\x70\x70\x65\x6e\x64','\x66\x69\x6c\x65','\x6f\x75\x74\x70\x75\x74\x5f\x66\x6f\x72\x6d\x61\x74','\x72\x65\x70\x61\x69\x72','\x50\x4f\x53\x54','\x62\x6c\x6f\x62'];return _0x1a2b[_0x4567];};
+    const MY_SERVER_URL = _0x0123(0x1);
+    const fileUpload = document.getElementById('file-upload');
+    const uploadLabel = document.getElementById('upload-label');
+    const convertBtn = document.getElementById('convert-btn');
+    const status = document.getElementById('status');
+    const detectedFormatDisplay = document.getElementById('detected-format');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    const infoBox = document.getElementById('info-box');
+    const optionsArea = document.getElementById('options-area');
+    const outputFormat = document.getElementById('output-format');
+    const repairToggle = document.getElementById('repair-toggle');
+    const ALLOWED_EXTS = ['obj', 'stl', 'gltf', 'glb', 'ply', 'fbx'];
+    let originalFileName = "";
+
+    fileUpload.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const extension = file.name.split('.').pop().toLowerCase();
+        if (!ALLOWED_EXTS.includes(extension)) {
+            status.textContent = "❌ خطأ: الرجاء اختيار ملف مجسم 3D مدعوم .";
+            status.style.color = "#ef4444";
+            infoBox.style.display = "none"; optionsArea.style.display = "none"; convertBtn.style.display = "none";
+            fileUpload.value = ""; return;
+        }
+        status.style.color = "#fbbf24";
+        originalFileName = file.name.split('.').slice(0, -1).join('.');
+        infoBox.style.display = "block"; optionsArea.style.display = "block"; convertBtn.style.display = "block";
+        detectedFormatDisplay.textContent = extension.toUpperCase();
+        fileNameDisplay.textContent = originalFileName;
+        uploadLabel.textContent = `الملف المختار: ${file.name}`;
+        status.textContent = "المجسم جاهز للتحويل!";
+    });
+
+    convertBtn.addEventListener('click', async function() {
+        const file = fileUpload.files[0];
+        if (!file) return;
+        status.textContent = "جاري رفع الملف ومعالجته في السحاب... يرجى الانتظار.";
+        convertBtn.disabled = true;
+        const formData = new FormData();
+        formData.append(_0x0123(0x3), file);
+        formData.append(_0x0123(0x4), outputFormat.value);
+        formData.append(_0x0123(0x5), repairToggle.checked ? "true" : "false");
+        try {
+            const response = await fetch(MY_SERVER_URL, { method: _0x0123(0x6), body: formData });
+            if (!response.ok) throw new Error();
+            const blob = await response.blob();
+            const downloadLink = document.createElement('a');
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = `${originalFileName}.${outputFormat.value}`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            status.textContent = "تم التحويل بنجاح واكتمال العملية! 🎉";
+        } catch (err) {
+            status.textContent = "عذراً، حدثت مشكلة في الاتصال بالسيرفر أو أثناء المعالجة.";
+        } finally {
+            convertBtn.disabled = false;
+        }
+    });
+</script>
+</body>
+</html>
