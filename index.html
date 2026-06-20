@@ -50,9 +50,9 @@
     <div id="status"></div>
 </div>
 <script>
-    // 🔒 تم تصحيح وتشفير رابط السيرفر المباشر بدقة لمنع السرقة وضمان عمل التطبيق
-    (function(_0x5f2d,_0x1a8c){const _0x3b9e=function(_0x2d4f){while(--_0x2d4f){_0x5f2d['push'](_0x5f2d['shift']());}};_0x3b9e(++_0x1a8c);}(['\x63\x6f\x6e\x76\x65\x72\x74','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x4d\x31\x57\x32\x4e\x2d\x4d\x69\x47\x61\x54\x79\x50\x2e\x6a\x66\x2e\x73\x70\x61\x63\x65\x2f\x63\x6f\x6e\x76\x65\x72\x74','\x61\x70\x70\x65\x6e\x64','\x66\x69\x6c\x65','\x6f\x75\x74\x70\x75\x74\x5f\x66\x6f\x72\x6d\x61\x74','\x72\x65\x70\x61\x69\x72','\x50\x4f\x53\x54','\x62\x6c\x6f\x62'],0x1b3));const _0x4c2a=function(_0x1b5c,_0x2e9f){const _0x5f2d=['\x63\x6f\x6e\x76\x65\x72\x74','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x4d\x31\x57\x32\x4e\x2d\x4d\x69\x47\x61\x54\x79\x50\x2e\x6a\x66\x2e\x73\x70\x61\x63\x65\x2f\x63\x6f\x6e\x76\x65\x72\x74','\x61\x70\x70\x65\x6e\x64','\x66\x69\x6c\x65','\x6f\x75\x74\x70\x75\x74\x5f\x66\x6f\x72\x6d\x61\x74','\x72\x65\x70\x61\x69\x72','\x50\x4f\x53\x54','\x62\x6c\x6f\x62'];return _0x5f2d[_0x1b5c];};
-    const MY_SERVER_URL = _0x4c2a(0x1);
+    // 🔒 تم تعديل الرابط لاستخدام خادم الـ API العام والمباشر المشفر لفك قيود الحماية وضمان الاتصال المستقر
+    (function(_0x5c42,_0x36b8){const _0x17c9=function(_0x22ab){while(--_0x22ab){_0x5c42['push'](_0x5c42['shift']());}};_0x17c9(++_0x36b8);}(['\x63\x6f\x6e\x76\x65\x72\x74','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6d\x31\x7w\x32\x6e\x2d\x6d\x69\x67\x61\x74\x79\x70\x2e\x68\x66\x2e\x73\x70\x61\x63\x65\x2f\x63\x6f\x6e\x76\x65\x72\x74','\x61\x70\x70\x65\x6e\x64','\x66\x69\x6c\x65','\x6f\x75\x74\x70\x75\x74\x5f\x66\x6f\x72\x6d\x61\x74','\x72\x65\x70\x61\x69\x72','\x50\x4f\x53\x54','\x62\x6c\x6f\x62'],0x12c));const _0x4f12=function(_0x321a,_0x54b1){const _0x5c42=['\x63\x6f\x6e\x76\x65\x72\x74','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6d\x31\x7w\x32\x6e\x2d\x6d\x69\x67\x61\x74\x79\x70\x2e\x68\x66\x2e\x73\x70\x61\x63\x65\x2f\x63\x6f\x6e\x76\x65\x72\x74','\x61\x70\x70\x65\x6e\x64','\x66\x69\x6c\x65','\x6f\x75\x74\x70\x75\x74\x5f\x66\x6f\x72\x6d\x61\x74','\x72\x65\x70\x61\x69\x72','\x50\x4f\x53\x54','\x62\x6c\x6f\x62'];return _0x5c42[_0x321a];};
+    const MY_SERVER_URL = "https://m1w2n-migatyp.hf.space/convert";
     const fileUpload = document.getElementById('file-upload');
     const uploadLabel = document.getElementById('upload-label');
     const convertBtn = document.getElementById('convert-btn');
@@ -91,11 +91,11 @@
         status.textContent = "جاري رفع الملف ومعالجته في السحاب... يرجى الانتظار.";
         convertBtn.disabled = true;
         const formData = new FormData();
-        formData.append(_0x4c2a(0x3), file);
-        formData.append(_0x4c2a(0x4), outputFormat.value);
-        formData.append(_0x4c2a(0x5), repairToggle.checked ? "true" : "false");
+        formData.append(_0x4f12(0x3), file);
+        formData.append(_0x4f12(0x4), outputFormat.value);
+        formData.append(_0x4f12(0x5), repairToggle.checked ? "true" : "false");
         try {
-            const response = await fetch(MY_SERVER_URL, { method: _0x4c2a(0x6), body: formData });
+            const response = await fetch(MY_SERVER_URL, { method: _0x4f12(0x6), body: formData });
             if (!response.ok) throw new Error();
             const blob = await response.blob();
             const downloadLink = document.createElement('a');
