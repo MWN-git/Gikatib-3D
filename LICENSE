@@ -1,0 +1,40 @@
+===============================================================================
+                       Gikatib-3D SOFTWARE LICENSE & TERMS OF SERVICE
+===============================================================================
+Copyright (C) 2026 Marouane El Maachi (مروان المعاشي). All Rights Reserved.
+
+This software codebase is licensed under the GNU General Public License v3.0 (GPLv3).
+Any reuse, modification, or distribution of this code MUST clearly credit the 
+original author: Marouane El Maachi (مروان المعاشي).
+
+-------------------------------------------------------------------------------
+CRITICAL RESTRICTION: STRICT HOSTING & SERVER USE POLICY (حظر استخدام السيرفر)
+-------------------------------------------------------------------------------
+1. NO SERVER USE: You are permitted to inspect, modify, or host the front-end 
+   codebase of this project, but you are STRICTLY PROHIBITED from sending requests 
+   to, routing through, or utilizing the author's private server infrastructure, 
+   including but not limited to:
+   https://m1w2n-migatyp.hf.space/ or any Hugging Face Spaces owned by Marouane El Maachi.
+
+2. FORBIDDEN BACKEND ACCESS: Any external deployment of this website (via Vercel, 
+   Netlify, GitHub Pages, or any other hosting provider) by anyone other than 
+   the original author MUST configure and use their own separate backend/server. 
+
+3. LEGAL ACTION: Unauthorized traffic or spamming directed to the author's 
+   backend endpoints from third-party websites is considered a violation of 
+   intellectual property and terms of service, and will result in immediate 
+   blocking and potential legal escalation.
+
+===============================================================================
+بند حماية السيرفر والملكية الفكرية (باللغة العربية):
+===============================================================================
+1. يُلزم القانون أي مبرمج يقتبس أو يعيد نشر هذا الكود بذكر اسم صاحب المشروع الأصلي: 
+   مروان المعاشي (Marouane El Maachi) بشكل واضح وصريح في مشروعه.
+
+2. يُمنع منعاً باتاً وقاطعاً لأي موقع أو مشروع خارجي استخدام رابط السيرفر أو الـ API 
+   الخاص بصاحب المشروع (المستضاف على Hugging Face). 
+
+3. أي شخص يقوم بنشر الكود على حسابه (في Vercel أو غيره) مُجبر قانونياً وتقنياً على 
+   إنشاء سيرفر خاص به، وأي محاولة لاستغلال سيرفر "مروان المعاشي" ستواجه بالحظر الفوري 
+   والملاحقة بتهمة استغلال موارد غير مصرح بها.
+===============================================================================
